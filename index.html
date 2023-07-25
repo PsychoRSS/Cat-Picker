@@ -1,77 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cat Picker</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-      rel="stylesheet" />
-    <script
-      src="https://code.jquery.com/jquery-3.7.0.js"
-      integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
-      crossorigin="anonymous"></script>
-  </head>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.7.0.js"
+        integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+</head>
 
-  <body>
+<body>
     <button id="generateButton">-Debugging button-</button>
     <button id="favoriteButton">-Favorite button-</button>
-  </body>
+</body>
 
-  <body>
+<body>
     <!-- header of the page -->
     <header class="flex justify-between bg-red-500">
-      <h1 class="p-5 text-white text-xl">Cat Breed Picker</h1>
-      <h2 class="p-5 text-white text-xl">
-        Made by Javi, Alex, Christian and Bree
-      </h2>
+        <h1 class="p-5 text-white text-xl">Cat Breed Picker</h1>
+        <h2 class="p-5 text-white text-xl">
+            Made by Javi, Alex, Christian and Bree
+        </h2>
     </header>
 
     <div class="grid grid-cols-12 h-screen">
-      <!-- List Column -->
-      <div class="col-span-3 p-4 bg-purple-500">
-        <h1 class="bg-red-400 text-white text-xl p-3">Favorites</h1>
-        <ul>
-          <li class="bg-red-300 p-2 text-white border-t-2 border-white">
-            Maine Coon
-          </li>
-          <li class="bg-red-300 p-2 text-white border-t-2 border-white">
-            Persian
-          </li>
-          <li class="bg-red-300 p-2 text-white border-t-2 border-white">
-            Siamese
-          </li>
-          <li class="bg-red-300 p-2 text-white border-t-2 border-white">
-            Calico
-          </li>
-          <li class="bg-red-300 p-2 text-white border-t-2 border-white">
-            Devon Rex
-          </li>
-        </ul>
-      </div>
-      <!-- Image and Generate Button column -->
-      <div class="col-span-6 bg-blue-500 p-4">
-        <div class="bg-white rounded-lg p-4 flex flex-col items-center">
-          <img
-            class="w-full h-auto object-contain"
-            id="petImage"
-            alt="Pet Image"
-            src="https://placehold.co/1200x900" />
-          <button
-            class="rounded-lg bg-blue-500 p-2 m-2 w-full text-xl font-semibold"
-            id="generateButton">
-            Generate Cat
-          </button>
+        <!-- List Column -->
+        <div class="col-span-3 p-4 bg-purple-500">
+            <h1 class="bg-red-400 text-white text-xl p-3">Favorites</h1>
+            <ul>
+                <li class="bg-red-300 p-2 text-white border-t-2 border-white">
+                    Maine Coon
+                </li>
+                <li class="bg-red-300 p-2 text-white border-t-2 border-white">
+                    Persian
+                </li>
+                <li class="bg-red-300 p-2 text-white border-t-2 border-white">
+                    Siamese
+                </li>
+                <li class="bg-red-300 p-2 text-white border-t-2 border-white">
+                    Calico
+                </li>
+                <li class="bg-red-300 p-2 text-white border-t-2 border-white">
+                    Devon Rex
+                </li>
+            </ul>
         </div>
-      </div>
-      <!-- Breed Card and fact Card -->
-      <div class="col-span-3 bg-green-500 p-4"></div>
+        <!-- Image and Generate Button column -->
+        <div class="col-span-6 bg-blue-500 p-4">
+            <div class="bg-white rounded-lg p-4 flex flex-col items-center">
+                <img class="w-full h-auto object-contain" id="petImage" alt="Pet Image"
+                    src="https://placehold.co/1200x900" />
+                <button class="rounded-lg bg-blue-500 p-2 m-2 w-full text-xl font-semibold" id="generateButton">
+                    Generate Cat
+                </button>
+            </div>
+        </div>
+        <!-- Breed Card and fact Card -->
+        <div class="col-span-3 bg-green-500 p-4">
+            <div class="bg-white rounded-lg p-3 flex flex-col mb-2">
+                <h1 id="currentBreedText" class="font-semibold">Breed:</h1>
+                <button class="rounded-lg bg-blue-500 p-2 w-full font-semibold">Favorite</button>
+            </div>
+            <div class="bg-white rounded-lg p-3 flex flex-col items-center">
+                <h1 id="funFactText" class="font-semibold">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non arcu risus quis varius.</h1>
+            </div>
+        </div>
     </div>
-  </body>
+</body>
 
-  <script src="assets/script.js"></script>
-  <script
-    src="https://code.jquery.com/jquery-3.7.0.js"
-    integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+<script src="assets/script.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
     crossorigin="anonymous"></script>
+
 </html>
