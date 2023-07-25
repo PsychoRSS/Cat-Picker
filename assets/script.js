@@ -7,8 +7,7 @@ const factText = $("#funFactText");
 const testUrl = "https://cataas.com/cat?json=true";
 
 function getCatPic() {
-  var requestUrl =
-    "https://api.thecatapi.com/v1/images/search?limit=10&has_breeds=1&api_key=live_lkUcIGhHny1aB9p7gGVkrT3tBLGtuYNCBS6j3kFRxxWdKxXWwWRoCJFwUB4YUIOO";
+  var requestUrl = "https://api.thecatapi.com/v1/images/search?limit=10&has_breeds=1&api_key=live_lkUcIGhHny1aB9p7gGVkrT3tBLGtuYNCBS6j3kFRxxWdKxXWwWRoCJFwUB4YUIOO";
 
   fetch(requestUrl)
     .then(function (response) {
@@ -51,5 +50,5 @@ $(favoriteButton).on("click", () => {
   console.log(favoriteBreeds);
 });
 
-// getCatPic();
-getCatFact();
+
+
