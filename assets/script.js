@@ -6,14 +6,34 @@ const favoriteButton = $("#favoriteButton");
 const factText = $("#funFactText");
 const testUrl = "https://cataas.com/cat?json=true";
 
-$(generateButton).on("click", () => {
-  fetch(testUrl)
+function getCatPic() {
+  var requestUrl =
+    "https://api.thecatapi.com/v1/images/search?limit=10&has_breeds=1&api_key=live_lkUcIGhHny1aB9p7gGVkrT3tBLGtuYNCBS6j3kFRxxWdKxXWwWRoCJFwUB4YUIOO";
+
+  fetch(requestUrl)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data[0].url);
+      $(petImage).attr("src", data[0].url);
+    });
+}
+function getCatFact() {
+  var requestUrl = "https://meowfacts.herokuapp.com/";
+
+  fetch(requestUrl)
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
       console.log(data);
+      for (let o = 0; o < data.length; o++) {}
     });
+}
+
+$(generateButton).on("click", () => {
+  getCatPic();
 });
 
 $(favoriteButton).on("click", () => {
@@ -28,32 +48,5 @@ $(favoriteButton).on("click", () => {
   console.log(favoriteBreeds);
 });
 
-function getCatFact() {
-  var requestUrl = "https://meowfacts.herokuapp.com/";
-
-  fetch(requestUrl)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-      for (let o = 0; o < data.length; o++) {}
-    });
-}
-
-function getCatPic() {
-  var requestUrl =
-    "https://api.thecatapi.com/v1/images/search?limit=10&has_breeds=1&api_key=live_lkUcIGhHny1aB9p7gGVkrT3tBLGtuYNCBS6j3kFRxxWdKxXWwWRoCJFwUB4YUIOO";
-
-  fetch(requestUrl)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-      for (let o = 0; o < data.length; o++) {}
-    });
-}
-
-getCatPic();
+// getCatPic();
 getCatFact();
