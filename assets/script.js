@@ -17,7 +17,7 @@ $(generateButton).on("click", () => {
 });
 
 function getCatPic() {
-  var requestUrl = "https://meowfacts.herokuapp.com/";
+  var requestUrl = "https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=beng&api_key=live_lkUcIGhHny1aB9p7gGVkrT3tBLGtuYNCBS6j3kFRxxWdKxXWwWRoCJFwUB4YUIOO";
 
   fetch(requestUrl)
     .then(function (response) {
