@@ -1,0 +1,18 @@
+.hide {
+    display: none !important;
+}
+
+/* .custom-size {
+    height: 90%;
+} */
+
+/* #margin {
+    margin-bottom: -100px;
+} */
+#font-large {
+    font-size: 36px !important;
+}
+
+#font-medium {
+    font-size: 30px !important;
+}

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cat Picker</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="./assets/style.css" rel="stylesheet">
 
 </head>
 
@@ -16,7 +17,19 @@
         <h2 class="p-5 text-white text-xl">Made by Javi, Alex, Christian and Bree</h2>
     </header>
 
-    <div class="grid grid-cols-12 h-screen">
+    <!-- welcome page -->
+    <div class="custom-size h-screen bg-purple-100 flex items-center justify-center">
+        <div class="bg-red-200 flex flex-col space-y-4">
+            <h1 id="font-large" class="flex justify-center text-xl">Welcome to the Cat Breed Picker!</h1>
+            <p id="font-medium" class="px-8 text-xl">Are you interested in getting a new pet cat <br> but you're not sure
+               what cat breeds you like? <br> We can help! Just simply click the button below
+               to get started!
+            </p>
+        </div>
+    </div>
+
+    <!-- temporary hide class in order to create the main page -->
+    <div class="grid grid-cols-12 h-screen hide">
 
         <!-- List Column -->
         <div class="col-span-3 p-4 bg-purple-500">
