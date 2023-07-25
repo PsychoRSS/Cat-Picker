@@ -27,13 +27,16 @@ function getCatFact() {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
-      for (let o = 0; o < data.length; o++) {}
+        $(factText).text(data.data)
+
     });
 }
 
 $(generateButton).on("click", () => {
   getCatPic();
+});
+$(generateButton).on("click", () => {
+  getCatFact();
 });
 
 $(favoriteButton).on("click", () => {
