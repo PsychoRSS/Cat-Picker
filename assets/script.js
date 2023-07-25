@@ -16,8 +16,8 @@ $(generateButton).on("click", () => {
     });
 });
 
-function getCatPic() {
-  var requestUrl = "https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=beng&api_key=live_lkUcIGhHny1aB9p7gGVkrT3tBLGtuYNCBS6j3kFRxxWdKxXWwWRoCJFwUB4YUIOO";
+function getCatFact() {
+  var requestUrl = "https://meowfacts.herokuapp.com/";
 
   fetch(requestUrl)
     .then(function (response) {
@@ -29,8 +29,8 @@ function getCatPic() {
     });
 }
 
-function getCatFact() {
-  var requestUrl = "https://cataas.com/cat?json=true";
+function getCatPic() {
+  var requestUrl = "https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=beng&api_key=live_lkUcIGhHny1aB9p7gGVkrT3tBLGtuYNCBS6j3kFRxxWdKxXWwWRoCJFwUB4YUIOO";
 
   fetch(requestUrl)
     .then(function (response) {
