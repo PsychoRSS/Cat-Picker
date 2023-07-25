@@ -16,6 +16,18 @@ $(generateButton).on("click", () => {
     });
 });
 
+$(favoriteButton).on("click", () => {
+  let currentBreed = $(breedText).val();
+  let favoriteBreeds = localStorage.getItem("favoriteBreeds");
+
+  if (favoriteBreeds == false) {
+    favoriteBreeds = [currentBreed];
+  } else {
+    favoriteBreeds.push(currentBreed);
+  }
+  console.log(favoriteBreeds);
+});
+
 function getCatFact() {
   var requestUrl = "https://meowfacts.herokuapp.com/";
 
@@ -30,7 +42,8 @@ function getCatFact() {
 }
 
 function getCatPic() {
-  var requestUrl = "https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=beng&api_key=live_lkUcIGhHny1aB9p7gGVkrT3tBLGtuYNCBS6j3kFRxxWdKxXWwWRoCJFwUB4YUIOO";
+  var requestUrl =
+    "https://api.thecatapi.com/v1/images/search?limit=10&has_breeds=1&api_key=live_lkUcIGhHny1aB9p7gGVkrT3tBLGtuYNCBS6j3kFRxxWdKxXWwWRoCJFwUB4YUIOO";
 
   fetch(requestUrl)
     .then(function (response) {
