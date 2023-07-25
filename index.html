@@ -9,8 +9,41 @@
 </head>
 
 <body>
-    
+
+    <!-- header of the page -->
+    <header class="flex justify-between bg-red-500">
+        <h1 class="p-5 text-white text-xl">Cat Breed Picker</h1>
+        <h2 class="p-5 text-white text-xl">Made by Javi, Alex, Christian and Bree</h2>
+    </header>
+
+    <div class="grid grid-cols-12 h-screen">
+
+        <!-- List Column -->
+        <div class="col-span-3 p-4 bg-purple-500">
+            <h1 class="bg-red-400 text-white text-xl p-3">Favorites</h1>
+                <ul>
+                    <li class="bg-red-300 p-2 text-white border-t-2 border-white">Maine Coon</li>
+                    <li class="bg-red-300 p-2 text-white border-t-2 border-white">Persian</li>
+                    <li class="bg-red-300 p-2 text-white border-t-2 border-white">Siamese</li>
+                    <li class="bg-red-300 p-2 text-white border-t-2 border-white">Calico</li>
+                    <li class="bg-red-300 p-2 text-white border-t-2 border-white">Devon Rex</li>
+                </ul>
+        </div>
+        <!-- Image and Generate Button column -->
+        <div class="col-span-6 bg-blue-500 p-4 "> 
+            <div class="bg-white rounded-lg p-4 flex flex-col items-center">
+                <img class="w-full h-auto object-contain" id="petImage" alt="Pet Image" src="https://placehold.co/1200x900">
+                <button class="rounded-lg bg-blue-500 p-2 m-2 w-full text-xl font-semibold" id="generateButton">Generate Cat</button>
+            </div>
+        </div>
+        <!-- Breed Card and fact Card -->
+        <div class="col-span-3 bg-green-500 p-4">
+        </div>
+
+    </div>
+
 </body>
 
 <script src="assets/script.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
 </html>
