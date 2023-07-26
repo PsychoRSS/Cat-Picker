@@ -1,15 +1,35 @@
+header {
+    background-color: #db9967;
+}
+
 .hide {
     display: none !important;
 }
 
-.margin {
-    margin-bottom: 50px;
+.light-brown {
+    color: #db9967;
 }
 
-#font-large {
+.border-grey {
+    border-color:#b0a399;
+}
+
+#start {
+    background-color: #b0a399;
+    width: fit-content;
+    margin: 10px auto;
+    font-size: 30px;
+}
+
+.font-large {
     font-size: 36px !important;
 }
 
-#font-medium {
-    font-size: 30px !important;
+.font-medium {
+    font-size: 24px !important;
+}
+
+.bg-image {
+    background-image: url(./images/cat-pattern.jpeg);
+    background-size: 1550px 750px;
 }
