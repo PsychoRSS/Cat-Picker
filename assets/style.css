@@ -31,5 +31,6 @@ header {
 
 .bg-image {
     background-image: url(./images/cat-pattern.jpeg);
-    background-size: 1550px 750px;
+    background-size: fill;
+    background-position: center;
 }
