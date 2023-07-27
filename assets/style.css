@@ -42,3 +42,7 @@ header {
     background-size: fill;
     background-position: center;
 }
+
+#petImage{
+    max-height: 600px;
+}
