@@ -5,6 +5,9 @@ const breedText = $("#currentBreedText");
 const favoriteButton = $("#favoriteButton");
 const factText = $("#funFactText");
 const testUrl = "https://cataas.com/cat?json=true";
+const welcomeButton = $("#welcomeButton");
+const welcomePage = $("#welcomePage");
+const catPage = $("catPage");
 let currentBreed;
 
 function getCatPic() {
@@ -48,3 +51,10 @@ $(favoriteButton).on("click", () => {
   }
   localStorage.setItem("favoriteBreeds", JSON.stringify(favoriteBreeds));
 });
+
+$(welcomeButton).on("click", () => {
+  welcomePage.hide();
+  catPage.show();
+});
+// getCatPic();
+getCatFact();
