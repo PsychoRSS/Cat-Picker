@@ -14,6 +14,10 @@ header {
     background-color:#db9967;
 }
 
+.grey {
+    color: #b0a399
+}
+
 .border-grey {
     border-color:#b0a399;
 }
