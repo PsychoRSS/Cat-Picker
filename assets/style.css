@@ -1,10 +1,17 @@
+
+:root {
+    --light-brown: #db9967;
+    --light-grey: #b0a399;
+}
+
+
 body {
     max-width: 100%;
     overflow: hidden;
 }
 
 header {
-    background-color: #db9967;
+    background-color: var(--light-brown);
 }
 
 .hide {
@@ -12,23 +19,29 @@ header {
 }
 
 .light-brown {
-    color: #db9967;
+    color: var(--light-brown);
 }
 
 .bg-light-brown {
-    background-color: #db9967;
+
+    background-color: var(--light-brown);
+}
+
+.grey {
+    color: var(--light-grey);
 }
 
 .border-grey {
-    border-color: #b0a399;
+    border-color: var(--light-grey);
 }
 
 .bg-grey {
-    background-color: #b0a399
+    background-color: var(--light-grey);
+
 }
 
 #start {
-    background-color: #b0a399;
+    background-color: var(--light-grey);
     width: fit-content;
     margin: 10px auto;
     font-size: 30px;

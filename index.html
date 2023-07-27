@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cat Picker</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.7.0.js"
         integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
     <link href="./assets/style.css" rel="stylesheet">
@@ -30,7 +32,9 @@
             what cat breeds you like? We can help! Just simply click the button below
             to get started!
         </p>
-        <button id="start" class="px-4 text-white rounded-xl">Start</button>
+        <button id="start" class="px-4 text-white rounded-xl">Start
+            <i class="fa-solid fa-paw"></i>
+        </button>
     </div>
 
     <!-- temporary hide class in order to create the main page -->
@@ -64,22 +68,23 @@
         </div>
         <!-- Image and Generate Button column -->
         <div class="col-span-6 p-4">
-            <div class="bg-white rounded-lg p-4 flex flex-col items-center">
+            <div class="bg-white rounded-lg border-2 border-grey p-4 flex flex-col items-center">
                 <img class="w-full h-auto object-contain" id="petImage" alt="Pet Image"
                     src="https://placehold.co/1200x900" />
-                <button class="rounded-lg bg-blue-500 p-2 m-2 w-full text-xl font-semibold" id="generateButton">
+                <button class="rounded-lg bg-light-brown text-white p-2 m-2 w-full text-xl font-semibold" id="generateButton">
                     Generate Cat
+                    <i class="fa-solid fa-paw"></i>
                 </button>
             </div>
         </div>
         <!-- Breed Card and fact Card Column -->
-        <div class="col-span-3 p-4 w-full">
-            <div class="bg-white rounded-lg p-3 flex flex-col mb-2">
-                <h1 id="currentBreedText" class="font-semibold">Breed:</h1>
-                <button id="favoriteButton" class="rounded-lg bg-blue-500 p-2 w-full font-semibold">Favorite</button>
+        <div class="col-span-3 p-4">
+            <div class="bg-white rounded-lg border-2 border-grey p-3 flex flex-col mb-2">
+                <h1 id="currentBreedText" class="font-semibold grey">Breed:</h1>
+                <button id="favoriteButton" class="rounded-lg bg-light-brown text-white p-2 w-full font-semibold">Favorite</button>
             </div>
-            <div class="bg-white rounded-lg p-3 flex flex-col items-center">
-                <h1 id="funFactText" class="font-semibold">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+            <div class="bg-white rounded-lg border-2 border-grey p-3 flex flex-col items-center">
+                <h1 id="funFactText" class="font-semibold grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non arcu risus quis varius.</h1>
             </div>
         </div>
