@@ -1,3 +1,8 @@
+body {
+    max-width: 100%;
+    overflow: hidden;
+}
+
 header {
     background-color: #db9967;
 }
@@ -11,15 +16,15 @@ header {
 }
 
 .bg-light-brown {
-    background-color:#db9967;
+    background-color: #db9967;
 }
 
 .border-grey {
-    border-color:#b0a399;
+    border-color: #b0a399;
 }
 
 .bg-grey {
-    background-color:#b0a399
+    background-color: #b0a399
 }
 
 #start {
@@ -43,6 +48,6 @@ header {
     background-position: center;
 }
 
-#petImage{
+#petImage {
     max-height: 600px;
 }
