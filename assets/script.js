@@ -5,6 +5,9 @@ const breedText = $("#currentBreedText");
 const favoriteButton = $("#favoriteButton");
 const factText = $("#funFactText");
 const testUrl = "https://cataas.com/cat?json=true";
+const welcomeButton = $("#welcomeButton");
+const welcomePage = $("#welcomePage")
+const catPage = $("catPage")
 
 function getCatPic() {
   var requestUrl =
@@ -47,3 +50,11 @@ $(favoriteButton).on("click", () => {
   }
   console.log(favoriteBreeds);
 });
+
+
+$(welcomeButton).on("click", () => {
+  welcomePage.hide()
+  catPage.show()
+})
+// getCatPic();
+getCatFact();
