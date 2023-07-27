@@ -46,8 +46,9 @@ $(favoriteButton).on("click", () => {
 
   if (!favoriteBreeds) {
     favoriteBreeds = [currentBreed];
-  } else {
+  } else if (!favoriteBreeds.includes(currentBreed)) {
     favoriteBreeds.push(currentBreed);
+  } else {
   }
   localStorage.setItem("favoriteBreeds", JSON.stringify(favoriteBreeds));
 });
