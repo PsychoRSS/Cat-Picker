@@ -7,7 +7,7 @@ const factText = $("#funFactText");
 const testUrl = "https://cataas.com/cat?json=true";
 const welcomeButton = $("#welcomeButton");
 const welcomePage = $("#welcomePage");
-const catPage = $("catPage");
+const catPage = $("#catPage");
 let currentBreed;
 
 function getCatPic() {
@@ -56,5 +56,3 @@ $(welcomeButton).on("click", () => {
   welcomePage.hide();
   catPage.show();
 });
-// getCatPic();
-getCatFact();
