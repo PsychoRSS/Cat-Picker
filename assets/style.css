@@ -52,7 +52,7 @@ header {
 }
 
 .font-medium {
-    font-size: 24px !important;
+    font-size: 24px !important; 
 }
 
 .bg-image {
@@ -63,4 +63,20 @@ header {
 
 #petImage {
     max-height: 600px;
+}
+
+@media (max-width: 768px) {
+
+    body{
+        overflow: visible;
+    }
+
+    .bg-image{
+        background-size: cover;
+        overflow-y: auto;
+    }
+
+    .grid{
+        grid-template-columns: none;
+    }
 }
