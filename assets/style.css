@@ -10,8 +10,16 @@ header {
     color: #db9967;
 }
 
+.bg-light-brown {
+    background-color:#db9967;
+}
+
 .border-grey {
     border-color:#b0a399;
+}
+
+.bg-grey {
+    background-color:#b0a399
 }
 
 #start {
