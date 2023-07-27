@@ -21,7 +21,7 @@ function loadFavoritesList() {
   } else {
     for (let i = 0; i < favoriteBreeds.length; i++) {
       breedLi = $("<li>");
-      breedLi.addClass("bg-red-300 p-2 text-white border-t-2 border-white");
+      breedLi.addClass("p-2 text-white border-t-2 border-white bg-grey");
       breedLi.text(favoriteBreeds[i]);
       $(favoritesList).append(breedLi);
     }
@@ -74,14 +74,14 @@ $(favoriteButton).on("click", () => {
   }
 });
 
-function welcome () {
- welcomePage.show()
- catPage.hide()
+function welcome() {
+  welcomePage.show();
+  catPage.hide();
 }
 $(welcomeButton).on("click", function () {
-  catPage.show()
-  welcomePage.hide()
+  catPage.show();
+  welcomePage.hide();
 });
 
-welcome()
+welcome();
 loadFavoritesList();
