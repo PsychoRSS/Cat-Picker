@@ -5,7 +5,7 @@ const breedText = $("#currentBreedText");
 const favoriteButton = $("#favoriteButton");
 const factText = $("#funFactText");
 const testUrl = "https://cataas.com/cat?json=true";
-const welcomeButton = $("#welcomeButton");
+const welcomeButton = $("#start");
 const welcomePage = $("#welcomePage");
 const catPage = $("#catPage");
 let currentBreed;
@@ -21,7 +21,7 @@ function loadFavoritesList() {
   } else {
     for (let i = 0; i < favoriteBreeds.length; i++) {
       breedLi = $("<li>");
-      breedLi.addClass("bg-red-300 p-2 text-white border-t-2 border-white");
+      breedLi.addClass("p-2 text-white border-t-2 border-white bg-grey");
       breedLi.text(favoriteBreeds[i]);
       $(favoritesList).append(breedLi);
     }
@@ -74,9 +74,14 @@ $(favoriteButton).on("click", () => {
   }
 });
 
-$(welcomeButton).on("click", () => {
-  welcomePage.hide();
+function welcome() {
+  welcomePage.show();
+  catPage.hide();
+}
+$(welcomeButton).on("click", function () {
   catPage.show();
+  welcomePage.hide();
 });
 
+welcome();
 loadFavoritesList();
