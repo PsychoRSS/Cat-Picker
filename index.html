@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,7 +12,8 @@
 </head>
 
 <body>
-    <!-- header of the page -->
+    <div class="bg-image h-screen">
+         <!-- header of the page -->
     <header class="flex justify-between light-brown">
         <h1 class="p-5 text-white text-xl">Cat Breed Picker</h1>
         <h2 class="p-5 text-white text-xl">
@@ -20,26 +22,29 @@
     </header>
 
     <!-- welcome page -->
-    <div class="bg-image h-screen">
+    <!-- <div class="bg-image h-screen">
         <header class="flex justify-between light-brown">
             <h1 class="p-5 text-white text-xl">Cat Breed Picker</h1>
             <h2 class="p-5 text-white text-xl">Made by Javi, Alex, Christian and Bree</h2>
-        </header>
-        <div class="mt-40 w-1/2 m-auto flex flex-col p-5 rounded-xl space-y-4">
-            <h1 class="flex justify-center light-brown font-large pb-2 w-fit border-b-4 border-grey">Welcome to the Cat Breed Picker!</h1>
-            <p class="pb-3 text-center font-medium leading-relaxed light-brown text-xl">Are you interested in getting a new pet cat but you're not sure
-               what cat breeds you like? We can help! Just simply click the button below
-               to get started!
-            </p>
-            <button id="start" class="px-4 text-white rounded-xl">Start</button>
-        </div>
+        </header> -->
+    <div class="mt-40 w-1/2 m-auto flex flex-col p-5 rounded-xl space-y-4 hide">
+        <h1 class="flex justify-center light-brown font-large pb-2 w-fit border-b-4 border-grey">Welcome to the Cat
+            Breed Picker!</h1>
+        <p class="pb-3 text-center font-medium leading-relaxed light-brown text-xl">Are you interested in getting a new
+            pet cat but you're not sure
+            what cat breeds you like? We can help! Just simply click the button below
+            to get started!
+        </p>
+        <button id="start" class="px-4 text-white rounded-xl">Start</button>
     </div>
+
+    <!-- </div> -->
 
     <!-- temporary hide class in order to create the main page -->
 
     <div class="grid grid-cols-12 h-screen">
         <!-- List Column -->
-        <div class="col-span-3 p-4 bg-purple-500">
+        <div class="col-span-3 p-4">
             <div class="bg-red-300 rounded-lg p-4">
                 <h1 class="bg-red-400 text-white text-xl p-3">Favorites</h1>
                 <ul>
@@ -63,7 +68,7 @@
 
         </div>
         <!-- Image and Generate Button column -->
-        <div class="col-span-6 bg-blue-500 p-4">
+        <div class="col-span-6 p-4">
             <div class="bg-white rounded-lg p-4 flex flex-col items-center">
                 <img class="w-full h-auto object-contain" id="petImage" alt="Pet Image"
                     src="https://placehold.co/1200x900" />
@@ -73,7 +78,7 @@
             </div>
         </div>
         <!-- Breed Card and fact Card Column -->
-        <div class="col-span-3 bg-green-500 p-4">
+        <div class="col-span-3 p-4">
             <div class="bg-white rounded-lg p-3 flex flex-col mb-2">
                 <h1 id="currentBreedText" class="font-semibold">Breed:</h1>
                 <button id="favoriteButton" class="rounded-lg bg-blue-500 p-2 w-full font-semibold">Favorite</button>
@@ -84,6 +89,9 @@
             </div>
         </div>
     </div>
+
+    </div>
+   
 </body>
 
 <script src="assets/script.js"></script>
