@@ -5,6 +5,7 @@ const breedText = $("#currentBreedText");
 const favoriteButton = $("#favoriteButton");
 const factText = $("#funFactText");
 const testUrl = "https://cataas.com/cat?json=true";
+let currentBreed;
 
 function getCatPic() {
   var requestUrl =
@@ -15,8 +16,9 @@ function getCatPic() {
       return response.json();
     })
     .then(function (data) {
-      console.log(data[0].url);
+      currentBreed = data[0].breeds[0].name;
       $(petImage).attr("src", data[0].url);
+      $(breedText).text(`Breed: ${data[0].breeds[0].name}`);
     });
 }
 function getCatFact() {
@@ -37,13 +39,12 @@ $(generateButton).on("click", () => {
 });
 
 $(favoriteButton).on("click", () => {
-  let currentBreed = $(breedText).val();
-  let favoriteBreeds = localStorage.getItem("favoriteBreeds");
+  let favoriteBreeds = JSON.parse(localStorage.getItem("favoriteBreeds"));
 
-  if (favoriteBreeds == false) {
+  if (!favoriteBreeds) {
     favoriteBreeds = [currentBreed];
   } else {
     favoriteBreeds.push(currentBreed);
   }
-  console.log(favoriteBreeds);
+  localStorage.setItem("favoriteBreeds", JSON.stringify(favoriteBreeds));
 });
