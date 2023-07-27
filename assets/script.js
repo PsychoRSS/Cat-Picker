@@ -5,7 +5,7 @@ const breedText = $("#currentBreedText");
 const favoriteButton = $("#favoriteButton");
 const factText = $("#funFactText");
 const testUrl = "https://cataas.com/cat?json=true";
-const welcomeButton = $("#welcomeButton");
+const welcomeButton = $("#start");
 const welcomePage = $("#welcomePage");
 const catPage = $("#catPage");
 let currentBreed;
@@ -74,9 +74,14 @@ $(favoriteButton).on("click", () => {
   }
 });
 
-$(welcomeButton).on("click", () => {
-  welcomePage.hide();
-  catPage.show();
+function welcome () {
+ welcomePage.show()
+ catPage.hide()
+}
+$(welcomeButton).on("click", function () {
+  catPage.show()
+  welcomePage.hide()
 });
 
+welcome()
 loadFavoritesList();
