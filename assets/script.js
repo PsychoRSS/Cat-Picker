@@ -61,15 +61,17 @@ $(generateButton).on("click", () => {
 
 $(favoriteButton).on("click", () => {
   let favoriteBreeds = JSON.parse(localStorage.getItem("favoriteBreeds"));
-
-  if (!favoriteBreeds) {
-    favoriteBreeds = [currentBreed];
-  } else if (!favoriteBreeds.includes(currentBreed)) {
-    favoriteBreeds.push(currentBreed);
+  if (!currentBreed) {
   } else {
+    if (!favoriteBreeds) {
+      favoriteBreeds = [currentBreed];
+    } else if (!favoriteBreeds.includes(currentBreed)) {
+      favoriteBreeds.push(currentBreed);
+    } else {
+    }
+    localStorage.setItem("favoriteBreeds", JSON.stringify(favoriteBreeds));
+    loadFavoritesList();
   }
-  localStorage.setItem("favoriteBreeds", JSON.stringify(favoriteBreeds));
-  loadFavoritesList();
 });
 
 $(welcomeButton).on("click", () => {
