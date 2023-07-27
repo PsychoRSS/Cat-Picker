@@ -1,8 +1,14 @@
+
 :root {
     --light-brown: #db9967;
     --light-grey: #b0a399;
 }
 
+
+body {
+    max-width: 100%;
+    overflow: hidden;
+}
 
 header {
     background-color: var(--light-brown);
@@ -17,6 +23,7 @@ header {
 }
 
 .bg-light-brown {
+
     background-color: var(--light-brown);
 }
 
@@ -30,6 +37,7 @@ header {
 
 .bg-grey {
     background-color: var(--light-grey);
+
 }
 
 #start {
@@ -53,6 +61,6 @@ header {
     background-position: center;
 }
 
-#petImage{
+#petImage {
     max-height: 600px;
 }
