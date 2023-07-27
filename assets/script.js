@@ -10,6 +10,24 @@ const welcomePage = $("#welcomePage");
 const catPage = $("#catPage");
 let currentBreed;
 
+function loadFavoritesList() {
+  let favoriteBreeds = JSON.parse(localStorage.getItem("favoriteBreeds"));
+  $(favoritesList).html("");
+  if (!favoriteBreeds) {
+    breedLi = $("<li>");
+    breedLi.addClass("bg-red-300 p-2 text-white border-t-2 border-white");
+    breedLi.text("No breeds favorited yet!");
+    $(favoritesList).append(breedLi);
+  } else {
+    for (let i = 0; i < favoriteBreeds.length; i++) {
+      breedLi = $("<li>");
+      breedLi.addClass("bg-red-300 p-2 text-white border-t-2 border-white");
+      breedLi.text(favoriteBreeds[i]);
+      $(favoritesList).append(breedLi);
+    }
+  }
+}
+
 function getCatPic() {
   var requestUrl =
     "https://api.thecatapi.com/v1/images/search?limit=10&has_breeds=1&api_key=live_lkUcIGhHny1aB9p7gGVkrT3tBLGtuYNCBS6j3kFRxxWdKxXWwWRoCJFwUB4YUIOO";
@@ -51,9 +69,12 @@ $(favoriteButton).on("click", () => {
   } else {
   }
   localStorage.setItem("favoriteBreeds", JSON.stringify(favoriteBreeds));
+  loadFavoritesList();
 });
 
 $(welcomeButton).on("click", () => {
   welcomePage.hide();
   catPage.show();
 });
+
+loadFavoritesList();
