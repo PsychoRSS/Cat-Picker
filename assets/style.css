@@ -64,6 +64,18 @@ header {
     max-height: 600px;
 }
 
+#generateButton:hover {
+    background-color: var(--light-grey)
+}
+
+#favoriteButton:hover {
+    background-color: var(--light-grey)
+}
+
+#start:hover {
+    background-color: var(--light-brown)
+}
+
 @media (max-width: 768px) {
 
     body {
