@@ -98,3 +98,17 @@ header {
         max-height: 450px;
     }
 }
+
+@media (max-width: 1028px){
+    .bg-image{
+        background-size: cover;
+        overflow-y: auto;
+        background-position: center;
+    }
+
+    .grid{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+}
+
