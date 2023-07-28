@@ -5,95 +5,91 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cat Picker</title>
+    <!-- Adding Tailwind CDN -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-    <link rel="stylesheet" />
+    <!-- Adding Font CDN -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <!-- Adding Jquery CDN -->
     <script src="https://code.jquery.com/jquery-3.7.0.js"
         integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
     <link href="./assets/style.css" rel="stylesheet">
 </head>
 
 <body>
+    <!-- Background image -->
     <div class="bg-image h-screen">
-         <!-- header of the page -->
-    <header class="flex justify-between light-brown mobile-header">
-        <h1 class="p-5 text-white text-xl smaller-padding">Cat Breed Picker</h1>
-        <h2 class="p-5 text-white text-xl smaller-padding">
-            Made by Javi, Alex, Christian and Bree
-        </h2>
-        
-    </header>
+        <!-- Header of the page -->
+        <header class="flex justify-between light-brown mobile-header">
+            <h1 class="p-5 text-white text-xl smaller-padding">Cat Breed Picker</h1>
+            <h2 class="p-5 text-white text-xl smaller-padding">
+                Made by Javi, Alex, Christian and Bree
+            </h2>
 
-    <!-- welcome page -->
-    <div class="mt-40 w-1/2 m-auto flex flex-col p-5 rounded-xl space-y-4 smaller-div" id="welcomePage">
-        <h1 class="flex justify-center light-brown font-large text-center pb-2 w-fit border-b-4 border-grey mobile-title">Welcome to the Cat
-            Breed Picker!</h1>
-        <p class="pb-3 text-center font-medium leading-relaxed light-brown text-xl mobile-text">Are you interested in getting a new
-            pet cat but you're not sure
-            what cat breeds you like? We can help! Just simply click the button below
-            to get started!
-        </p>
-        <button id="start" class="px-4 text-white rounded-xl">Start
-            <i class="fa-solid fa-paw"></i>
-        </button>
-    </div>
+        </header>
 
-    <!-- temporary hide class in order to create the main page -->
-
-    <div class="grid grid-cols-12 h-screen" id="catPage">
-        <!-- List Column -->
-        <div class="col-span-3 p-4">
-
-            <div class="bg-white rounded-lg border-2 border-grey p-4">
-                <h1 class="bg-light-brown text-white text-xl p-3">Favorites</h1>
-                <ul id="favoritesList">
-                    <li class="p-2 text-white border-t-2 border-white bg-grey">
-
-                        Maine Coon
-                    </li>
-                    <li class="p-2 text-white border-t-2 border-white bg-grey">
-                        Persian
-                    </li>
-                    <li class="p-2 text-white border-t-2 border-white bg-grey">
-                        Siamese
-                    </li>
-                    <li class="p-2 text-white border-t-2 border-white bg-grey">
-                        Calico
-                    </li>
-                    <li class="p-2 text-white border-t-2 border-white bg-grey">
-                        Devon Rex
-                    </li>
-                </ul>
-            </div>
-
+        <!-- Welcome page -->
+        <div class="mt-40 w-1/2 m-auto flex flex-col p-5 rounded-xl space-y-4 smaller-div" id="welcomePage">
+            <h1
+                class="flex justify-center light-brown font-large text-center pb-2 w-fit border-b-4 border-grey mobile-title">
+                Welcome to the Cat
+                Breed Picker!</h1>
+            <p class="pb-3 text-center font-medium leading-relaxed light-brown text-xl mobile-text">Are you interested
+                in getting a new
+                pet cat but you're not sure
+                what cat breeds you like? We can help! Just simply click the button below
+                to get started!
+            </p>
+            <!-- Start Button -->
+            <button id="start" class="px-4 text-white rounded-xl">Start
+                <i class="fa-solid fa-paw"></i>
+            </button>
         </div>
-        <!-- Image and Generate Button column -->
-        <div class="col-span-6 p-4">
-            <div class="bg-white rounded-lg border-2 border-grey p-4 flex flex-col items-center">
-                <img class="w-full h-auto object-contain" id="petImage" alt="Pet Image"
-                    src="https://placehold.co/1200x900" />
-                <button class="rounded-lg bg-light-brown text-white p-2 m-2 w-full text-xl font-semibold" id="generateButton">
-                    Generate Cat
-                    <i class="fa-solid fa-paw"></i>
-                </button>
+
+        <!-- Setting Columns in Container for Tailwind at Span of 12 -->
+        <div class="grid grid-cols-12 h-screen" id="catPage">
+            <!-- Favorites List Container spanning 3 Columns-->
+            <div class="col-span-3 p-4">
+                <div class="bg-white rounded-lg border-2 border-grey p-4">
+                    <h1 class="bg-light-brown text-white text-xl p-3">Favorites</h1>
+                    <!-- Favorites List Gererated in JS -->
+                    <ul id="favoritesList">
+                    </ul>
+                </div>
+
             </div>
-        </div>
-        <!-- Breed Card and fact Card Column -->
-        <div class="col-span-3 p-4">
-            <div class="bg-white rounded-lg border-2 border-grey p-3 flex flex-col mb-2">
-                <h1 id="currentBreedText" class="font-semibold grey">Breed:</h1>
-                <button id="favoriteButton" class="rounded-lg bg-light-brown text-white p-2 w-full font-semibold">Favorite</button>
+            <!-- Image and Generate Button Container Spanning 6 Columns -->
+            <div class="col-span-6 p-4">
+                <div class="bg-white rounded-lg border-2 border-grey p-4 flex flex-col items-center">
+                    <img class="w-full h-auto object-contain" id="petImage" alt="Pet Image"
+                        src="https://placehold.co/1200x900" />
+                        <!-- Generate Button -->
+                    <button class="rounded-lg bg-light-brown text-white p-2 m-2 w-full text-xl font-semibold"
+                        id="generateButton">
+                        Generate Cat
+                        <i class="fa-solid fa-paw"></i>
+                    </button>
+                </div>
             </div>
-            <div class="bg-white rounded-lg border-2 border-grey p-3 flex flex-col items-center">
-                <h1 id="funFactText" class="font-semibold grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non arcu risus quis varius.</h1>
+            <!-- Breed Card and Fact Card Container Spanning 3 Columns -->
+            <div class="col-span-3 p-4">
+                <!-- Breed and Favorite Button Container -->
+                <div class="bg-white rounded-lg border-2 border-grey p-3 flex flex-col mb-2">
+                    <h1 id="currentBreedText" class="font-semibold grey">Breed:</h1>
+                    <!-- Favorite Button -->
+                    <button id="favoriteButton"
+                        class="rounded-lg bg-light-brown text-white p-2 w-full font-semibold">Favorite</button>
+                </div>
+                <!-- Fun Fact Container -->
+                <div class="bg-white rounded-lg border-2 border-grey p-3 flex flex-col items-center">
+                    <!-- funFactText Gererated in CS -->
+                    <h1 id="funFactText" class="font-semibold grey"></h1>
+                </div>
             </div>
         </div>
-    </div>
 
-
-   
 </body>
 
+<!-- Calling script.js -->
 <script src="assets/script.js"></script>
+
 </html>
