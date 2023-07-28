@@ -34,12 +34,12 @@ function loadFavoritesList() {
       $(deleteBtn).on("click", function (e) {
         // deleteFromLocalStorage()
         let chosenBreed = $(e.target).parent().attr("data-breed")
-
         let index = favoriteBreeds.indexOf(chosenBreed);
         favoriteBreeds.splice(index, 1);
-        localStorage.setItem("favoriteBreeds", favoriteBreeds);
+        console.log(typeof(favoriteBreeds))
+        localStorage.setItem("favoriteBreeds", JSON.stringify(favoriteBreeds));
         loadFavoritesList();
-        console.log(typeof (chosenBreed))
+        console.log(chosenBreed)
       })
     }
   }
