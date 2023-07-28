@@ -57,10 +57,17 @@ header {
 
 .bg-image {
     background-image: url(./images/cat-pattern.jpeg);
-    background-size: fill;
-    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
 #petImage {
     max-height: 600px;
 }
+
+@media screen and (max-width: 864px) {
+    .smaller-div {
+        
+    }
+}
+
