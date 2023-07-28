@@ -74,10 +74,27 @@ header {
     .bg-image{
         background-size: cover;
         overflow-y: auto;
+        background-position: center;
     }
 
     .grid{
         grid-template-columns: 1fr;
         grid-template-rows: auto;
+    }
+
+    .col-span-6{
+        grid-row-start: 1;
+    }
+
+    .col-span-3:nth-child(1) {
+        grid-row-start: 3;
+    }
+
+    .col-span-3:nth-child(2){
+        grid-row-start: 2;
+    }
+
+    #petImage{
+        max-height: 450px;
     }
 }
