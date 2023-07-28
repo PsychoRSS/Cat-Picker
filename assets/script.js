@@ -42,6 +42,8 @@ function getCatPic() {
       $(breedText).text(`Breed: ${data[0].breeds[0].name}`);
     });
 }
+
+
 function getCatFact() {
   var requestUrl = "https://meowfacts.herokuapp.com/";
 
