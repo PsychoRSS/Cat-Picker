@@ -1,4 +1,3 @@
-
 :root {
     --light-brown: #db9967;
     --light-grey: #b0a399;
@@ -48,11 +47,11 @@ header {
 }
 
 .font-large {
-    font-size: 36px !important;
+    font-size: 36px;
 }
 
 .font-medium {
-    font-size: 24px !important; 
+    font-size: 24px !important;
 }
 
 .bg-image {
@@ -65,25 +64,36 @@ header {
     max-height: 600px;
 }
 
-/* Mobile View */
+#generateButton:hover {
+    background-color: var(--light-grey)
+}
+
+#favoriteButton:hover {
+    background-color: var(--light-grey)
+}
+
+#start:hover {
+    background-color: var(--light-brown)
+}
+
 @media (max-width: 768px) {
 
-    body{
+    body {
         overflow: visible;
     }
 
-    .bg-image{
+    .bg-image {
         background-size: cover;
         overflow-y: auto;
         background-position: center;
     }
 
-    .grid{
+    .grid {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
     }
 
-    .col-span-6{
+    .col-span-6 {
         grid-row-start: 1;
     }
 
@@ -91,23 +101,54 @@ header {
         grid-row-start: 3;
     }
 
-    .col-span-3:nth-child(2){
+    .col-span-3:nth-child(2) {
         grid-row-start: 2;
     }
 
-    #petImage{
+    #petImage {
         max-height: 450px;
     }
+
+    .mobile-title {
+        font-size: 30px !important;
+    }
+
+    .mobile-text {
+        font-size: 20px !important;
+    }
+
+    .mobile-header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .smaller-padding {
+        padding: 5px 0px;
+    }
 }
- /* Tablet View */
-@media (max-width: 1028px){
-    .bg-image{
+
+@media screen and (max-width: 864px) {
+    .smaller-div {
+        margin-top: 15px !important;
+        margin: 0px auto !important;
+        width: 90% !important;
+    }
+}
+
+@media (max-width: 1028px) {
+    .bg-image {
         background-size: cover;
         overflow-y: auto;
         background-position: center;
     }
 
-    .grid{
+    .smaller-div {
+        margin-top: 25px !important;
+        margin: 0px auto !important;
+        width: 75% !important;
+    }
+
+    .grid {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
     }
@@ -129,3 +170,8 @@ header {
     }
 }
 
+@media screen and (max-width: 1300px) {
+    .smaller-div {
+        width: 70%;
+    }
+}
