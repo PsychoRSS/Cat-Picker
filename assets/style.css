@@ -1,22 +1,26 @@
+/* Defining Custom Variables */
 :root {
     --light-brown: #db9967;
     --light-grey: #b0a399;
 }
 
-
+/* Setting body element to disbale scroll */
 body {
     max-width: 100%;
     overflow: hidden;
 }
 
+/* Styling for the header */
 header {
     background-color: var(--light-brown);
 }
 
+/* Utility class to hide elements */
 .hide {
     display: none !important;
 }
 
+/* Styling for elements */
 .light-brown {
     color: var(--light-brown);
 }
@@ -39,6 +43,7 @@ header {
 
 }
 
+/* Styling for start button */
 #start {
     background-color: var(--light-grey);
     width: fit-content;
@@ -46,6 +51,7 @@ header {
     font-size: 30px;
 }
 
+/* Styling for the font sizes */
 .font-large {
     font-size: 36px;
 }
@@ -54,16 +60,19 @@ header {
     font-size: 24px !important;
 }
 
+/* Styling for the background image */
 .bg-image {
     background-image: url(./images/cat-pattern.jpeg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
 
+/* Setting max height for petImage */
 #petImage {
     max-height: 600px;
 }
 
+/* Hover effect styling */
 #generateButton:hover {
     background-color: var(--light-grey)
 }
@@ -76,6 +85,7 @@ header {
     background-color: var(--light-brown)
 }
 
+/* Media query for screens with a maximum width of 768px (Mobile View) */
 @media (max-width: 768px) {
 
     body {
@@ -135,6 +145,7 @@ header {
     }
 }
 
+/* Media query for screens with a maximum width of 1028px (Tablet View) */
 @media (max-width: 1028px) {
     .bg-image {
         background-size: cover;
