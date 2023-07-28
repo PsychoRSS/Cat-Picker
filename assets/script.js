@@ -10,7 +10,6 @@ const welcomePage = $("#welcomePage");
 const catPage = $("#catPage");
 let currentBreed;
 
-// Renders favorites list by taking values from localstorage
 function loadFavoritesList() {
   let favoriteBreeds = JSON.parse(localStorage.getItem("favoriteBreeds"));
   $(favoritesList).html("");
@@ -22,14 +21,31 @@ function loadFavoritesList() {
   } else {
     for (let i = 0; i < favoriteBreeds.length; i++) {
       breedLi = $("<li>");
+      deleteBtn = $("<button>");
+      // deleteBtn.addClass("data-item-id p-1 bg-red")
+      // deleteBtn.attr()
+      deleteBtn.text("Delete");
       breedLi.addClass("p-2 text-white border-t-2 border-white bg-grey");
       breedLi.text(favoriteBreeds[i]);
+      breedLi.attr("data-breed", favoriteBreeds[i])
+      $(breedLi).append(deleteBtn);
       $(favoritesList).append(breedLi);
+
+      $(deleteBtn).on("click", function (e) {
+        // deleteFromLocalStorage()
+        let chosenBreed = $(e.target).parent().attr("data-breed")
+
+        let index = favoriteBreeds.indexOf(chosenBreed);
+        favoriteBreeds.splice(index, 1);
+        localStorage.setItem("favoriteBreeds", favoriteBreeds);
+        loadFavoritesList();
+        console.log(typeof (chosenBreed))
+      })
     }
   }
-}
 
-// Renders picture of cat and defines currentBreed variable for later use
+};
+
 function getCatPic() {
   var requestUrl =
     "https://api.thecatapi.com/v1/images/search?limit=10&has_breeds=1&api_key=live_lkUcIGhHny1aB9p7gGVkrT3tBLGtuYNCBS6j3kFRxxWdKxXWwWRoCJFwUB4YUIOO";
@@ -44,8 +60,6 @@ function getCatPic() {
       $(breedText).text(`Breed: ${data[0].breeds[0].name}`);
     });
 }
-
-// Renders cat fact in fact box
 function getCatFact() {
   var requestUrl = "https://meowfacts.herokuapp.com/";
 
@@ -58,13 +72,11 @@ function getCatFact() {
     });
 }
 
-// Adds event listener to "generate cat" button to load new picture and fact
 $(generateButton).on("click", () => {
   getCatPic();
   getCatFact();
 });
 
-// Adds event listener to "favorite" button to store the breed of the currently shown cat in localstorage, then re-renders list
 $(favoriteButton).on("click", () => {
   let favoriteBreeds = JSON.parse(localStorage.getItem("favoriteBreeds"));
   if (!currentBreed) {
@@ -80,13 +92,20 @@ $(favoriteButton).on("click", () => {
   }
 });
 
-// Hides main app page and loads welcome page on site load
+// function deleteFromLocalStorage(e) {
+//   let chosenBreed = e.target.parent().val;
+//   let favoriteBreeds = JSON.parse("favoriteBreeds");
+//   let index = favoriteBreeds.indexOf(chosenBreed); //1, 3
+//   favoriteBreeds.splice(index, 1);
+//   localStorage.setItem("favoriteBreeds", favoriteBreeds);
+//   loadFavoritesList();
+
+// }
+
 function welcome() {
   welcomePage.show();
   catPage.hide();
-}
-
-// Adds event listener to "start" button on welcome page to proceed to main application
+};
 $(welcomeButton).on("click", function () {
   catPage.show();
   welcomePage.hide();
@@ -94,5 +113,3 @@ $(welcomeButton).on("click", function () {
 
 welcome();
 loadFavoritesList();
-getCatPic();
-getCatFact();
