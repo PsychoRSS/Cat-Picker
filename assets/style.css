@@ -40,7 +40,10 @@ header {
 
 .bg-grey {
     background-color: var(--light-grey);
+}
 
+.bg-white {
+    background-color: white;
 }
 
 /* Styling for start button */
