@@ -55,8 +55,8 @@ function getCatPic() {
       $(breedText).text(`Breed: ${data[0].breeds[0].name}`);
     });
 }
-
 // Calls meowfacts api for a random cat fact then displays it in fact box
+
 function getCatFact() {
   var requestUrl = "https://meowfacts.herokuapp.com/";
 

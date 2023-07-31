@@ -1,23 +1,26 @@
-
+/* Defining Custom Variables */
 :root {
     --light-brown: #db9967;
     --light-grey: #b0a399;
 }
 
-
+/* Setting body element to disbale scroll */
 body {
     max-width: 100%;
     overflow: hidden;
 }
 
+/* Styling for the header */
 header {
     background-color: var(--light-brown);
 }
 
+/* Utility class to hide elements */
 .hide {
     display: none !important;
 }
 
+/* Styling for elements */
 .light-brown {
     color: var(--light-brown);
 }
@@ -37,9 +40,13 @@ header {
 
 .bg-grey {
     background-color: var(--light-grey);
-
 }
 
+.bg-white {
+    background-color: white;
+}
+
+/* Styling for start button */
 #start {
     background-color: var(--light-grey);
     width: fit-content;
@@ -47,20 +54,138 @@ header {
     font-size: 30px;
 }
 
+/* Styling for the font sizes */
 .font-large {
-    font-size: 36px !important;
+    font-size: 36px;
 }
 
 .font-medium {
     font-size: 24px !important;
 }
 
+/* Styling for the background image */
 .bg-image {
     background-image: url(./images/cat-pattern.jpeg);
-    background-size: fill;
-    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
+/* Setting max height for petImage */
 #petImage {
     max-height: 600px;
+}
+
+/* Hover effect styling */
+#generateButton:hover {
+    background-color: var(--light-grey)
+}
+
+#favoriteButton:hover {
+    background-color: var(--light-grey)
+}
+
+#start:hover {
+    background-color: var(--light-brown)
+}
+
+/* Media query for screens with a maximum width of 768px (Mobile View) */
+@media (max-width: 768px) {
+
+    body {
+        overflow: visible;
+    }
+
+    .bg-image {
+        background-size: cover;
+        overflow-y: auto;
+        background-position: center;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .col-span-6 {
+        grid-row-start: 1;
+    }
+
+    .col-span-3:nth-child(1) {
+        grid-row-start: 3;
+    }
+
+    .col-span-3:nth-child(2) {
+        grid-row-start: 2;
+    }
+
+    #petImage {
+        max-height: 450px;
+    }
+
+    .mobile-title {
+        font-size: 30px !important;
+    }
+
+    .mobile-text {
+        font-size: 20px !important;
+    }
+
+    .mobile-header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .smaller-padding {
+        padding: 5px 0px;
+    }
+}
+
+@media screen and (max-width: 864px) {
+    .smaller-div {
+        margin-top: 15px !important;
+        margin: 0px auto !important;
+        width: 90% !important;
+    }
+}
+
+/* Media query for screens with a maximum width of 1028px (Tablet View) */
+@media (max-width: 1028px) {
+    .bg-image {
+        background-size: cover;
+        overflow-y: auto;
+        background-position: center;
+    }
+
+    .smaller-div {
+        margin-top: 25px !important;
+        margin: 0px auto !important;
+        width: 75% !important;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .col-span-6{
+        grid-row-start: 1;
+    }
+
+    .col-span-3:nth-child(1){
+        grid-row-start: 3;
+    }
+
+    .col-span-3:nth-child(2){
+        grid-row-start: 2;
+    }
+
+    #petImage{
+        max-height: 300px;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .smaller-div {
+        width: 70%;
+    }
 }
