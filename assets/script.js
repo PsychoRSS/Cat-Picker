@@ -95,5 +95,7 @@ $(welcomeButton).on("click", function () {
   welcomePage.hide();
 });
 
+getCatPic();
+getCatFact();
 welcome();
 loadFavoritesList();
