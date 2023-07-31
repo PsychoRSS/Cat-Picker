@@ -4,12 +4,12 @@ const generateButton = $("#generateButton");
 const breedText = $("#currentBreedText");
 const favoriteButton = $("#favoriteButton");
 const factText = $("#funFactText");
-const testUrl = "https://cataas.com/cat?json=true";
 const welcomeButton = $("#start");
 const welcomePage = $("#welcomePage");
 const catPage = $("#catPage");
 let currentBreed;
 
+// Renders favorite list and called whenever a favorite is added/removed
 function loadFavoritesList() {
   let favoriteBreeds = JSON.parse(localStorage.getItem("favoriteBreeds"));
   $(favoritesList).html("");
@@ -40,6 +40,7 @@ function loadFavoritesList() {
   }
 }
 
+// Calls Thecatapi to retrieve a random picture of a cat and defines currentBreed for future use
 function getCatPic() {
   var requestUrl =
     "https://api.thecatapi.com/v1/images/search?limit=10&has_breeds=1&api_key=live_lkUcIGhHny1aB9p7gGVkrT3tBLGtuYNCBS6j3kFRxxWdKxXWwWRoCJFwUB4YUIOO";
@@ -54,7 +55,7 @@ function getCatPic() {
       $(breedText).text(`Breed: ${data[0].breeds[0].name}`);
     });
 }
-
+// Calls meowfacts api for a random cat fact then displays it in fact box
 
 function getCatFact() {
   var requestUrl = "https://meowfacts.herokuapp.com/";
@@ -68,11 +69,13 @@ function getCatFact() {
     });
 }
 
+// Adds event listener to generate button to change picture and fact
 $(generateButton).on("click", () => {
   getCatPic();
   getCatFact();
 });
 
+// Adds event listener from favorite button to add current shown breed to favorite list in localstorage and re-render favorites list
 $(favoriteButton).on("click", () => {
   let favoriteBreeds = JSON.parse(localStorage.getItem("favoriteBreeds"));
   if (!currentBreed) {
@@ -88,10 +91,12 @@ $(favoriteButton).on("click", () => {
   }
 });
 
+// Hides main page div until welcomeButton is clicked
 function welcome() {
   welcomePage.show();
   catPage.hide();
 }
+
 $(welcomeButton).on("click", function () {
   catPage.show();
   welcomePage.hide();
