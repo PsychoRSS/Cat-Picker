@@ -21,9 +21,21 @@ function loadFavoritesList() {
   } else {
     for (let i = 0; i < favoriteBreeds.length; i++) {
       breedLi = $("<li>");
+      deleteBtn = $("<button>");
+      deleteBtn.text("Delete");
       breedLi.addClass("p-2 text-white border-t-2 border-white bg-grey");
       breedLi.text(favoriteBreeds[i]);
+      breedLi.attr("data-breed", favoriteBreeds[i]);
+      $(breedLi).append(deleteBtn);
       $(favoritesList).append(breedLi);
+
+      $(deleteBtn).on("click", function (e) {
+        let chosenBreed = $(e.target).parent().attr("data-breed");
+        let index = favoriteBreeds.indexOf(chosenBreed);
+        favoriteBreeds.splice(index, 1);
+        localStorage.setItem("favoriteBreeds", JSON.stringify(favoriteBreeds));
+        loadFavoritesList();
+      });
     }
   }
 }
@@ -85,5 +97,7 @@ $(welcomeButton).on("click", function () {
   welcomePage.hide();
 });
 
+getCatPic();
+getCatFact();
 welcome();
 loadFavoritesList();
