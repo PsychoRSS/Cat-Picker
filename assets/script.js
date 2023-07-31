@@ -13,9 +13,9 @@ let currentBreed;
 function loadFavoritesList() {
   let favoriteBreeds = JSON.parse(localStorage.getItem("favoriteBreeds"));
   $(favoritesList).html("");
-  if (!favoriteBreeds) {
+  if (!favoriteBreeds || favoriteBreeds.length < 1) {
     breedLi = $("<li>");
-    breedLi.addClass("bg-red-300 p-2 text-white border-t-2 border-white");
+    breedLi.addClass("p-2 text-white border-t-2 border-white bg-grey");
     breedLi.text("No breeds favorited yet!");
     $(favoritesList).append(breedLi);
   } else {
