@@ -22,29 +22,23 @@ function loadFavoritesList() {
     for (let i = 0; i < favoriteBreeds.length; i++) {
       breedLi = $("<li>");
       deleteBtn = $("<button>");
-      // deleteBtn.addClass("data-item-id p-1 bg-red")
-      // deleteBtn.attr()
       deleteBtn.text("Delete");
       breedLi.addClass("p-2 text-white border-t-2 border-white bg-grey");
       breedLi.text(favoriteBreeds[i]);
-      breedLi.attr("data-breed", favoriteBreeds[i])
+      breedLi.attr("data-breed", favoriteBreeds[i]);
       $(breedLi).append(deleteBtn);
       $(favoritesList).append(breedLi);
 
       $(deleteBtn).on("click", function (e) {
-        // deleteFromLocalStorage()
-        let chosenBreed = $(e.target).parent().attr("data-breed")
+        let chosenBreed = $(e.target).parent().attr("data-breed");
         let index = favoriteBreeds.indexOf(chosenBreed);
         favoriteBreeds.splice(index, 1);
-        console.log(typeof(favoriteBreeds))
         localStorage.setItem("favoriteBreeds", JSON.stringify(favoriteBreeds));
         loadFavoritesList();
-        console.log(chosenBreed)
-      })
+      });
     }
   }
-
-};
+}
 
 function getCatPic() {
   var requestUrl =
@@ -92,20 +86,10 @@ $(favoriteButton).on("click", () => {
   }
 });
 
-// function deleteFromLocalStorage(e) {
-//   let chosenBreed = e.target.parent().val;
-//   let favoriteBreeds = JSON.parse("favoriteBreeds");
-//   let index = favoriteBreeds.indexOf(chosenBreed); //1, 3
-//   favoriteBreeds.splice(index, 1);
-//   localStorage.setItem("favoriteBreeds", favoriteBreeds);
-//   loadFavoritesList();
-
-// }
-
 function welcome() {
   welcomePage.show();
   catPage.hide();
-};
+}
 $(welcomeButton).on("click", function () {
   catPage.show();
   welcomePage.hide();
