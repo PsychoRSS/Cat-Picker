@@ -23,6 +23,8 @@ function loadFavoritesList() {
       breedLi = $("<li>");
       deleteBtn = $("<button>");
       deleteBtn.text("Delete");
+      deleteBtn.addClass("rounded-lg bg-light-brown text-white p-1 relative top-0 right-0 m-1 text-sm");
+      deleteBtn.attr("id","delete-btn");
       breedLi.addClass("p-2 text-white border-t-2 border-white bg-grey");
       breedLi.text(favoriteBreeds[i]);
       breedLi.attr("data-breed", favoriteBreeds[i]);

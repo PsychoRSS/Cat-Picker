@@ -88,6 +88,23 @@ header {
     background-color: var(--light-brown)
 }
 
+#delete-btn:hover{
+    background-color: #ff5736;
+}
+
+button {
+    transition: background-color 0.1s;
+}
+
+/* Alliging the list to put button to the right and centering text vertically */
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
 /* Media query for screens with a maximum width of 768px (Mobile View) */
 @media (max-width: 768px) {
 
@@ -167,19 +184,19 @@ header {
         grid-template-rows: auto;
     }
 
-    .col-span-6{
+    .col-span-6 {
         grid-row-start: 1;
     }
 
-    .col-span-3:nth-child(1){
+    .col-span-3:nth-child(1) {
         grid-row-start: 3;
     }
 
-    .col-span-3:nth-child(2){
+    .col-span-3:nth-child(2) {
         grid-row-start: 2;
     }
 
-    #petImage{
+    #petImage {
         max-height: 300px;
     }
 }
